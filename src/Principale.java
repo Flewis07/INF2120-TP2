@@ -36,6 +36,7 @@ public class Principale {
             System.out.println(d.get(i));
         }
 
+
         FileWriter a1 = NouveauFichier.newFile(nomFichier);
 
 

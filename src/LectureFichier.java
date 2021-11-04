@@ -6,24 +6,29 @@ import java.util.ArrayList;
 
 public class LectureFichier {
 
-    public static ArrayList<String> lectureFichier(String contenu) throws IOException {
+    public static ArrayList<ArrayList<String>> lectureFichier(String contenu) throws IOException {
 
-        ArrayList<String> a = new ArrayList<>();
+        ArrayList<ArrayList<String>> a = new ArrayList<>();
         String syllable = "";
+        int position = 0;
 
             for (int i = 0; i < contenu.length(); i++) {
                 switch (contenu.charAt(i)) {
                     case '\n':
                         syllable = syllable + " ";
-                    a.add(syllable);
+                        a.add(new ArrayList<>());
+                    a.get(position).add(syllable);
+                    position++;
                     case 'a':
                     case 'e':
                     case 'i':
                     case 'o':
                     case 'u':
                         syllable = syllable + contenu.charAt(i);
-                        a.add(syllable);
+                        a.add(new ArrayList<String>());
+                        a.get(position).add(syllable);
                         syllable = "";
+                        position++;
                         break;
                     default:
                         syllable = syllable + contenu.charAt(i);

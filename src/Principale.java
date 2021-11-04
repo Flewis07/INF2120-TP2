@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Principale {
 
     public static ArrayList c = new ArrayList();
-    public static ArrayList d = new ArrayList();
+    public static ArrayList<ArrayList<String>> d = new ArrayList();
 
 
 
@@ -27,8 +27,8 @@ public class Principale {
 
         d = Convertir.convertion(lignes, katagana, hiragana);
 
-        for (int i= 0; i < d.size(); i++) {
-            System.out.println(d.get(i));
+        for(int i = 0; i < d.size(); i++){
+            System.out.println(NouveauFichier.ligneString(d.get(i)));
         }
 
 

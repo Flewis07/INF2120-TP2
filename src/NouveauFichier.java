@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class NouveauFichier {
 
-    public static FileWriter newFile(String nomFichier, ArrayList d) throws IOException {
+    public static FileWriter newFile(String nomFichier, ArrayList<ArrayList<String>> d) throws IOException {
         nomFichier = nomFichier.replaceAll(".txt", ".html");
         FileWriter nouveauFichier = new FileWriter(nomFichier);
-        nouveauFichier.write("< !DOCTYPE html>\n" +
-                "<html>\n" +
+        nouveauFichier.write("<!DOCTYPE html>\n" +
+                "<html lang =" + "jv" + ">\n" +
                 " <head>\n" +
                 " <title>TP 2</title>\n" +
                 " </head>\n" +
-                " <body>\n‘" + d.toString() + "’\n" +
+                " <body>\n‘" + NouveauFichier.blocLignes(d) + "’\n" +
                     " <hr>\n" +
                     " <table>\n" +
                     " </table>\n" +
@@ -21,6 +21,24 @@ public class NouveauFichier {
                     "</html>");
         nouveauFichier.close();
         return nouveauFichier;
+    }
+
+    public static String ligneString(ArrayList<String> ligne){
+        String newString = "";
+
+        for(int i = 0; i < ligne.size(); i++){
+            newString = newString + "&#" + ligne.get(i) + " ";
+        }
+        return newString;
+    }
+
+    public static String blocLignes(ArrayList<ArrayList<String>> d){
+        String bloc = "";
+
+        for(int i = 0; i < d.size(); i++){
+            bloc = bloc + NouveauFichier.ligneString(d.get(i)) + "\n";
+        }
+        return bloc;
     }
     }
 

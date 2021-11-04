@@ -3,18 +3,18 @@ import java.util.ArrayList;
 
 public class Convertir {
 
-    public static ArrayList<String> convertion(String [] lignes, ArrayList<Lettre> katagana, ArrayList<Lettre> hiragana) throws IOException {
+    public static ArrayList<ArrayList<String>> convertion(String [] lignes, ArrayList<Lettre> katagana, ArrayList<Lettre> hiragana) throws IOException {
 
         ArrayList<ArrayList<String>> c;
-        ArrayList<String> d = new ArrayList<>();
+        ArrayList<ArrayList<String>> d = new ArrayList<>();
 
         for (int i = 0; i < lignes.length; i++) {
             c = LectureFichier.lectureFichier(lignes[i]);
             for (int j = 0; j < c.get(i).size(); j++) {
                 if (c.get(i).get(j).charAt(0) >= 'A' && c.get(i).get(j).charAt(0) <= 'Z') {
-                    d = convertirUnicode(katagana, c, d, i);
+                    d.add(convertirUnicode(katagana, c, i));
                 } else if (c.get(i).get(j).charAt(0) >= 'a' && c.get(i).get(j).charAt(0) <= 'z') {
-                    d = convertirUnicode(hiragana, c, d, i);
+                    d.add(convertirUnicode(hiragana, c, i));
                 }
             }
         }
@@ -22,7 +22,8 @@ public class Convertir {
     }
 
     private static ArrayList<String> convertirUnicode(ArrayList<Lettre> e, ArrayList<ArrayList<String>> c,
-                                                      ArrayList<String> d, int i) {
+                                                      int i) {
+        ArrayList<String> d = new ArrayList<>();
         Lettre valeur;
         int j = 0;
         int k = 0;

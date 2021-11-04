@@ -1,13 +1,8 @@
 import java.util.ArrayList;
 
-public class Hiragana<T> extends Lettre {
+public class Hiragana {
 
-    public Hiragana(String a, String unicode) {
-        super(a, unicode);
-    }
-
-    @Override
-    public ArrayList<Lettre> nouvelArray() {
+    public static ArrayList<Lettre> hiragana() {
 
         ArrayList<Lettre> hiragana = new ArrayList<>();
 

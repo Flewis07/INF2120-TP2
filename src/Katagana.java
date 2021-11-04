@@ -1,13 +1,8 @@
 import java.util.ArrayList;
 
-public class Katagana<T> extends Lettre {
+public class Katagana {
 
-    public Katagana(String a, String unicode) {
-        super(a, unicode);
-    }
-
-    @Override
-    public ArrayList<Lettre> nouvelArray() {
+    public static ArrayList<Lettre> katagana() {
 
         ArrayList<Lettre> katagana = new ArrayList<>();
 

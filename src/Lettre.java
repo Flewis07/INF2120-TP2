@@ -13,4 +13,20 @@ public class Lettre {
     public ArrayList<Lettre> nouvelArray(){
         return null;
     }
+
+    public String getA() {
+        return a;
+    }
+
+    public void setA(String a) {
+        this.a = a;
+    }
+
+    public String getUnicode() {
+        return unicode;
+    }
+
+    public void setUnicode(String unicode) {
+        this.unicode = unicode;
+    }
 }

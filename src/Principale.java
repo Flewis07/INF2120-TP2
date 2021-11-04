@@ -22,22 +22,17 @@ public class Principale {
         //Methode qui permet de retirer les espaces du fichier.
         lignes = LectureFichier.trimerString(lignes);
 
+        ArrayList<Lettre> hiragana = Hiragana.hiragana();
+        ArrayList<Lettre> katagana = Katagana.katagana();
 
-
-
-        for (int i = 0; i < lignes.length; i++){
-            c = LectureFichier.lectureFichier(lignes[i]);
-            for(int j = 0; j < c.size(); j++){
-                d.add(c.get(j));
-            }
-        }
+        d = Convertir.convertion(lignes, katagana, hiragana);
 
         for (int i= 0; i < d.size(); i++) {
             System.out.println(d.get(i));
         }
 
 
-        FileWriter a1 = NouveauFichier.newFile(nomFichier);
+        FileWriter a1 = NouveauFichier.newFile(nomFichier, d);
 
 
 

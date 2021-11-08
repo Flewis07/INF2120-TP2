@@ -17,7 +17,6 @@ public class LectureClavier {
             if(!nom.contains(seq)){
                 throw new MessageErrException(MESSAGE_ERR_1);
             }
-
             return nom;
         }
 }

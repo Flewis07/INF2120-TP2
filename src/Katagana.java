@@ -2,6 +2,10 @@ import java.util.ArrayList;
 
 public class Katagana {
 
+    /**
+     * Cree un Arraylist contenant les syllables ainsi que leurs convertions en Katagana.
+     * @return un Arraylist contenant les syllables et leurs unicodes de coversion Katagana.
+     */
     public static ArrayList<Lettre> katagana() {
 
         ArrayList<Lettre> katagana = new ArrayList<>();
@@ -94,7 +98,6 @@ public class Katagana {
         katagana.add(new Lettre("Po", "12509"));
 
         katagana.add(new Lettre("N'", "12531"));
-
 
         return katagana;
     }

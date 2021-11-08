@@ -4,6 +4,14 @@ import java.util.ArrayList;
 
 public class NouveauFichier {
 
+    /**
+     * Permet d'ecrire un fichier de type html avec le contenu d'un Arraylist de type Arraylist de type String.
+     * @param nomFichier nom du fichier qui sera defini pour le nouveau fichier.
+     * @param d Arraylist contenant les Arraylist qui contient les Strings unicode Japonais a mettre dans le nouveau
+     *          fichier.
+     * @return un noveau fichier HTML de type FileWriter.
+     * @throws IOException
+     */
     public static FileWriter newFile(String nomFichier, ArrayList<ArrayList<String>> d) throws IOException {
         nomFichier = nomFichier.replaceAll(".txt", ".html");
         FileWriter nouveauFichier = new FileWriter(nomFichier);
@@ -13,7 +21,7 @@ public class NouveauFichier {
                 " <title>TP 2</title>\n" +
                 "<style>\n" +
                 "p {\n writing-mode: vertical-rl;\n text-orientation: upright;\n }" +
-  "</style>\n" +
+                "</style>\n" +
                 " </head>\n" +
                 " <body>\n" +
                     " <hr>\n" +
@@ -29,6 +37,11 @@ public class NouveauFichier {
         return nouveauFichier;
     }
 
+    /**
+     * Permet d'ajouter les caracteres au un String de l'unicode japonais qui sera mis dans le fichier HTML.
+     * @param ligne ligne de String auquel seront ajoutes les caracteres '&#'.
+     * @return le nouveau String avec les caracteres '&#' au debut.
+     */
     public static String ligneString(ArrayList<String> ligne){
         String newString = "";
 
@@ -38,6 +51,11 @@ public class NouveauFichier {
         return newString;
     }
 
+    /**
+     * Permet de mettre les Strings d'unicode d'une ligne dans un bloc de ligne qui sera dans le fichier HTML.
+     * @param d La ligne de String unicode qui sera mise dans le fichier HTML.
+     * @return un String de la ligne qui sera mise dans le fichier HTML.
+     */
     public static String blocLignes(ArrayList<ArrayList<String>> d){
         String bloc = "";
 

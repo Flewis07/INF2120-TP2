@@ -6,6 +6,12 @@ import java.util.ArrayList;
 
 public class LectureFichier {
 
+    /**
+     * Permet de lire une ligne de String et de la separer en syllables.
+     * @param contenu ligne de String a separer.
+     * @return un Arraylist contenant un Arraylist de Syllables en String.
+     * @throws IOException
+     */
     public static ArrayList<ArrayList<String>> lectureFichier(String contenu) throws IOException {
 
         ArrayList<ArrayList<String>> a = new ArrayList<>();
@@ -17,8 +23,9 @@ public class LectureFichier {
                     case '\n':
                         syllable = syllable + " ";
                         a.add(new ArrayList<>());
-                    a.get(position).add(syllable);
-                    position++;
+                        a.get(position).add(syllable);
+                        position++;
+                        break;
                     case 'a':
                     case 'e':
                     case 'i':
@@ -39,15 +46,25 @@ public class LectureFichier {
         return a;
     }
 
+    /**
+     * Permet de convertir un fichier text en String.
+     * @param nom nom du fichier dont le contenu sera converti en String.
+     * @return le contenu du fichier sous forme de String.
+     * @throws IOException
+     */
     public static String convertirString (String nom) throws IOException {
 
         Path filePath = Paths.get(nom);
         String contenu = Files.readString(filePath);
-        //contenu = contenu.replaceAll("\\s", "");
 
         return contenu;
     }
 
+    /**
+     * Retire les espace du tableau String.
+     * @param tableau tableau de String dans lequel il faut retirer les espace blancs.
+     * @return un tableau de String sans espaces blancs.
+     */
     public static String [] trimerString (String [] tableau){
 
         String [] tableau2 = new String[tableau.length];

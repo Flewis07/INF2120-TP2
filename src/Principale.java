@@ -9,6 +9,12 @@ public class Principale {
     public static ArrayList c = new ArrayList();
     public static ArrayList<ArrayList<String>> d = new ArrayList();
 
+    /**
+     * Methode main du programme.
+     * @param args
+     * @throws MessageErrException
+     * @throws IOException
+     */
     public static void main (String [] args) throws MessageErrException, IOException {
 
         //Lire un fichier a partir de la methode main. Le fichier doit etre en .txt sinon un message d'erreur survient.
@@ -28,17 +34,7 @@ public class Principale {
 
         d = Convertir.convertion(lignes, katagana, hiragana);
 
-       /** for(int i = 0; i < d.size(); i++){
-            System.out.println(NouveauFichier.ligneString(d.get(i)));
-        }*/
-
 
         FileWriter a1 = NouveauFichier.newFile(nomFichier, d);
-
-
-
-
-
-
     }
 }

@@ -39,9 +39,12 @@ public class Convertir {
                                                       ArrayList<ArrayList<String>> ligneSyllables) {
         ArrayList<String> d = new ArrayList<>();
         Lettre valeur;
+        String syllable1 = "";
+        String syllable2 = "";
         int j = 0;
         int k = 0;
         int i = 0;
+
 
             while (j < typeCaracteres.size() && i < ligneSyllables.size()) {
                 valeur = typeCaracteres.get(j);

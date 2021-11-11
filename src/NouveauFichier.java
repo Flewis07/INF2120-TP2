@@ -19,14 +19,11 @@ public class NouveauFichier {
                 "<html>\n" +
                 " <head>\n" +
                 " <title>TP 2</title>\n" +
-                "<style>\n" +
-                "p {\n writing-mode: vertical-rl;\n text-orientation: upright;\n }" +
-                "</style>\n" +
                 " </head>\n" +
                 " <body>\n" +
                     " <hr>\n" +
                     " <table>\n" +
-                NouveauFichier.blocLignes(d) + "\n" +
+                NouveauFichier.blocLignes(d) +
                     " </table>\n" +
                     "<hr>\n" +
                     "</body> \n" +
@@ -46,7 +43,7 @@ public class NouveauFichier {
 
             for (int i = ligne.size() - 1; i >= 0; i--) {
                 try {
-                newString = newString + "<td>&#" + ligne.get(i).get(j) + ";</td>";
+                newString = newString + "<td>" + ligne.get(i).get(j) + "</td>";
                 } catch (IndexOutOfBoundsException e) {
                     newString = newString + "<td> </td>";
                 }

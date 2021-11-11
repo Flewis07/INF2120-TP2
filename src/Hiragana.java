@@ -10,94 +10,94 @@ public class Hiragana {
 
         ArrayList<Lettre> hiragana = new ArrayList<>();
 
-        hiragana.add(new Lettre("a", "12354"));
-        hiragana.add(new Lettre("i", "12356"));
-        hiragana.add(new Lettre("u", "12358"));
-        hiragana.add(new Lettre("e", "12360"));
-        hiragana.add(new Lettre("o", "12362"));
+        hiragana.add(new Lettre("a", "&#12354;"));
+        hiragana.add(new Lettre("i", "&#12356;"));
+        hiragana.add(new Lettre("u", "&#12358;"));
+        hiragana.add(new Lettre("e", "&#12360;"));
+        hiragana.add(new Lettre("o", "&#12362;"));
 
-        hiragana.add(new Lettre("ka", "12363"));
-        hiragana.add(new Lettre("ki", "12365"));
-        hiragana.add(new Lettre("ku", "12367"));
-        hiragana.add(new Lettre("ke", "12369"));
-        hiragana.add(new Lettre("ko", "12371"));
+        hiragana.add(new Lettre("ka", "&#12363;"));
+        hiragana.add(new Lettre("ki", "&#12365;"));
+        hiragana.add(new Lettre("ku", "&#12367;"));
+        hiragana.add(new Lettre("ke", "&#12369;"));
+        hiragana.add(new Lettre("ko", "&#12371;"));
 
-        hiragana.add(new Lettre("sa", "12373"));
-        hiragana.add(new Lettre("shi", "12375"));
-        hiragana.add(new Lettre("su", "12377"));
-        hiragana.add(new Lettre("se", "12379"));
-        hiragana.add(new Lettre("so", "12381"));
+        hiragana.add(new Lettre("sa", "&#12373;"));
+        hiragana.add(new Lettre("shi", "&#12375;"));
+        hiragana.add(new Lettre("su", "&#12377;"));
+        hiragana.add(new Lettre("se", "&#12379;"));
+        hiragana.add(new Lettre("so", "&#12381;"));
 
-        hiragana.add(new Lettre("ta", "12383"));
-        hiragana.add(new Lettre("chi", "12385"));
-        hiragana.add(new Lettre("tsu", "12388"));
-        hiragana.add(new Lettre("te", "12390"));
-        hiragana.add(new Lettre("to", "12392"));
+        hiragana.add(new Lettre("ta", "&#12383;"));
+        hiragana.add(new Lettre("chi", "&#12385;"));
+        hiragana.add(new Lettre("tsu", "&#12388;"));
+        hiragana.add(new Lettre("te", "&#12390;"));
+        hiragana.add(new Lettre("to", "&#12392;"));
 
-        hiragana.add(new Lettre("na", "12394"));
-        hiragana.add(new Lettre("ni", "12395"));
-        hiragana.add(new Lettre("nu", "12396"));
-        hiragana.add(new Lettre("ne", "12397"));
-        hiragana.add(new Lettre("no", "12398"));
+        hiragana.add(new Lettre("na", "&#12394;"));
+        hiragana.add(new Lettre("ni", "&#12395;"));
+        hiragana.add(new Lettre("nu", "&#12396;"));
+        hiragana.add(new Lettre("ne", "&#12397;"));
+        hiragana.add(new Lettre("no", "&#12398;"));
 
-        hiragana.add(new Lettre("ha", "12399"));
-        hiragana.add(new Lettre("hi", "12402"));
-        hiragana.add(new Lettre("fu", "12405"));
-        hiragana.add(new Lettre("he", "12408"));
-        hiragana.add(new Lettre("ho", "12411"));
+        hiragana.add(new Lettre("ha", "&#12399;"));
+        hiragana.add(new Lettre("hi", "&#12402;"));
+        hiragana.add(new Lettre("fu", "&#12405;"));
+        hiragana.add(new Lettre("he", "&#12408;"));
+        hiragana.add(new Lettre("ho", "&#12411;"));
 
-        hiragana.add(new Lettre("ma", "12414"));
-        hiragana.add(new Lettre("mi", "12415"));
-        hiragana.add(new Lettre("mu", "12416"));
-        hiragana.add(new Lettre("me", "12417"));
-        hiragana.add(new Lettre("mo", "12418"));
+        hiragana.add(new Lettre("ma", "&#12414;"));
+        hiragana.add(new Lettre("mi", "&#12415;"));
+        hiragana.add(new Lettre("mu", "&#12416;"));
+        hiragana.add(new Lettre("me", "&#12417;"));
+        hiragana.add(new Lettre("mo", "&#12418;"));
 
-        hiragana.add(new Lettre("ya", "12420"));
-        hiragana.add(new Lettre("yu", "12422"));
-        hiragana.add(new Lettre("yo", "12424"));
+        hiragana.add(new Lettre("ya", "&#12420;"));
+        hiragana.add(new Lettre("yu", "&#12422;"));
+        hiragana.add(new Lettre("yo", "&#12424;"));
 
-        hiragana.add(new Lettre("ra", "12425"));
-        hiragana.add(new Lettre("ri", "12426"));
-        hiragana.add(new Lettre("ru", "12427"));
-        hiragana.add(new Lettre("re", "12428"));
-        hiragana.add(new Lettre("ro", "12429"));
+        hiragana.add(new Lettre("ra", "&#12425;"));
+        hiragana.add(new Lettre("ri", "&#12426;"));
+        hiragana.add(new Lettre("ru", "&#12427;"));
+        hiragana.add(new Lettre("re", "&#12428;"));
+        hiragana.add(new Lettre("ro", "&#12429;"));
 
-        hiragana.add(new Lettre("wa", "12431"));
-        hiragana.add(new Lettre("wi", "12432"));
-        hiragana.add(new Lettre("we", "12433"));
-        hiragana.add(new Lettre("wo", "12434"));
+        hiragana.add(new Lettre("wa", "&#12431;"));
+        hiragana.add(new Lettre("wi", "&#12432;"));
+        hiragana.add(new Lettre("we", "&#12433;"));
+        hiragana.add(new Lettre("wo", "&#12434;"));
 
-        hiragana.add(new Lettre("ga", "12364"));
-        hiragana.add(new Lettre("gi", "12366"));
-        hiragana.add(new Lettre("gu", "12368"));
-        hiragana.add(new Lettre("ge", "12370"));
-        hiragana.add(new Lettre("go", "12372"));
+        hiragana.add(new Lettre("ga", "&#12364;"));
+        hiragana.add(new Lettre("gi", "&#12366;"));
+        hiragana.add(new Lettre("gu", "&#12368;"));
+        hiragana.add(new Lettre("ge", "&#12370;"));
+        hiragana.add(new Lettre("go", "&#12372;"));
 
-        hiragana.add(new Lettre("za", "12374"));
-        hiragana.add(new Lettre("ji", "12376"));
-        hiragana.add(new Lettre("zu", "12378"));
-        hiragana.add(new Lettre("ze", "12380"));
-        hiragana.add(new Lettre("zo", "12382"));
+        hiragana.add(new Lettre("za", "&#12374;"));
+        hiragana.add(new Lettre("ji", "&#12376;"));
+        hiragana.add(new Lettre("zu", "&#12378;"));
+        hiragana.add(new Lettre("ze", "&#12380;"));
+        hiragana.add(new Lettre("zo", "&#12382;"));
 
-        hiragana.add(new Lettre("da", "12384"));
-        hiragana.add(new Lettre("dji", "12386"));
-        hiragana.add(new Lettre("dzu", "12389"));
-        hiragana.add(new Lettre("de", "12391"));
-        hiragana.add(new Lettre("do", "12393"));
+        hiragana.add(new Lettre("da", "&#12384;"));
+        hiragana.add(new Lettre("dji", "&#12386;"));
+        hiragana.add(new Lettre("dzu", "&#12389;"));
+        hiragana.add(new Lettre("de", "&#12391;"));
+        hiragana.add(new Lettre("do", "&#12393;"));
 
-        hiragana.add(new Lettre("ba", "12400"));
-        hiragana.add(new Lettre("bi", "12403"));
-        hiragana.add(new Lettre("bu", "12406"));
-        hiragana.add(new Lettre("be", "12409"));
-        hiragana.add(new Lettre("bo", "12412"));
+        hiragana.add(new Lettre("ba", "&#12400;"));
+        hiragana.add(new Lettre("bi", "&#12403;"));
+        hiragana.add(new Lettre("bu", "&#12406;"));
+        hiragana.add(new Lettre("be", "&#12409;"));
+        hiragana.add(new Lettre("bo", "&#12412;"));
 
-        hiragana.add(new Lettre("pa", "12401"));
-        hiragana.add(new Lettre("pi", "12404"));
-        hiragana.add(new Lettre("pu", "12407"));
-        hiragana.add(new Lettre("pe", "12410"));
-        hiragana.add(new Lettre("po", "12413"));
+        hiragana.add(new Lettre("pa", "&#12401;"));
+        hiragana.add(new Lettre("pi", "&#12404;"));
+        hiragana.add(new Lettre("pu", "&#12407;"));
+        hiragana.add(new Lettre("pe", "&#12410;"));
+        hiragana.add(new Lettre("po", "&#12413;"));
 
-        hiragana.add(new Lettre("n'", "12435"));
+        hiragana.add(new Lettre("n'", "&#12435;"));
 
         return hiragana;
     }

@@ -16,12 +16,14 @@ public class Convertir {
         ArrayList<ArrayList<String>> c;
         ArrayList<ArrayList<String>> d = new ArrayList<>();
 
+        int k = 0;
+
         for (int i = 0; i < lignes.length; i++) {
             c = LectureFichier.lectureFichier(lignes[i]);
-            for (int j = 0; j < c.get(i).size(); j++) {
-                if (c.get(i).get(j).charAt(0) >= 'A' && c.get(i).get(j).charAt(0) <= 'Z') {
+            for (int j = 0; j < c.get(k).size(); j++) {
+                if (c.get(k).get(j).charAt(0) >= 'A' && c.get(k).get(j).charAt(0) <= 'Z') {
                     d.add(convertirUnicode(katagana, c));
-                } else if (c.get(i).get(j).charAt(0) >= 'a' && c.get(i).get(j).charAt(0) <= 'z') {
+                } else if (c.get(k).get(j).charAt(0) >= 'a' && c.get(k).get(j).charAt(0) <= 'z') {
                     d.add(convertirUnicode(hiragana, c));
                 }
             }
@@ -38,9 +40,11 @@ public class Convertir {
     private static ArrayList<String> convertirUnicode(ArrayList<Lettre> typeCaracteres,
                                                       ArrayList<ArrayList<String>> ligneSyllables) {
         ArrayList<String> d = new ArrayList<>();
+        ArrayList<ArrayList<String>> syllable1 = new ArrayList<>();
+        ArrayList<String> syllable2 = new ArrayList<>();
+        String nouvelSyllable = "";
         Lettre valeur;
-        String syllable1 = "";
-        String syllable2 = "";
+        char y = 'y';
         int j = 0;
         int k = 0;
         int i = 0;
@@ -63,6 +67,19 @@ public class Convertir {
                     d.add(valeur.unicode);
                     j = 0;
                     i++;
+                /**} else if (ligneSyllables.get(i).get(k).charAt(1) == y && ligneSyllables.get(i).size() == 3) {
+                    nouvelSyllable = ligneSyllables.get(i).get(k).charAt(0) + "i";
+                    syllable1.add(new ArrayList<String>());
+                    syllable1.get(0).add(nouvelSyllable);
+                    syllable2 = convertirUnicode(typeCaracteres, syllable1);
+                    d.add(syllable2.get(0));
+                    nouvelSyllable = "";
+                    nouvelSyllable = nouvelSyllable + ligneSyllables.get(i).get(k).charAt(1) + ligneSyllables.get(i).get(k).charAt(2);
+                    syllable1.get(0).add(nouvelSyllable);
+                    syllable2 = convertirUnicode(typeCaracteres, syllable1);
+                    d.add(syllable2.get(0));
+                    j = 0;
+                    i++;*/
                 } else {
                     j++;
                 }

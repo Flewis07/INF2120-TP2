@@ -26,9 +26,7 @@ public class NouveauFichier {
                 " <body>\n" +
                     " <hr>\n" +
                     " <table>\n" +
-                    "<tr>\n" +
                 NouveauFichier.blocLignes(d) + "\n" +
-                    "</tr>\n" +
                     " </table>\n" +
                     "<hr>\n" +
                     "</body> \n" +
@@ -42,12 +40,18 @@ public class NouveauFichier {
      * @param ligne ligne de String auquel seront ajoutes les caracteres '&#'.
      * @return le nouveau String avec les caracteres '&#' au debut.
      */
-    public static String ligneString(ArrayList<String> ligne){
-        String newString = "";
+    public static String ligneString(ArrayList<ArrayList<String>> ligne, int j) {
+        String newString = "<tr>";
 
-        for(int i = 0; i < ligne.size(); i++){
-            newString = newString + "&#" + ligne.get(i) + "; ";
-        }
+
+            for (int i = ligne.size() - 1; i >= 0; i--) {
+                try {
+                newString = newString + "<td>&#" + ligne.get(i).get(j) + ";</td>";
+                } catch (IndexOutOfBoundsException e) {
+                    newString = newString + "<td> </td>";
+                }
+            }
+            newString = newString + "</tr>\n";
         return newString;
     }
 
@@ -56,14 +60,25 @@ public class NouveauFichier {
      * @param d La ligne de String unicode qui sera mise dans le fichier HTML.
      * @return un String de la ligne qui sera mise dans le fichier HTML.
      */
-    public static String blocLignes(ArrayList<ArrayList<String>> d){
+    public static String blocLignes(ArrayList<ArrayList<String>> d) {
         String bloc = "";
+        int j = 0;
+        int longueurLigne = 0;
 
-        for(int i = d.size() - 1; i >= 0; i--){
-            bloc = bloc + "<td><p>" + NouveauFichier.ligneString(d.get(i)) + "</p></td>\n";
+        for (int i = 0; i < d.size(); i++){
+            if(longueurLigne < d.get(i).size()){
+                longueurLigne = d.get(i).size();
+            }
         }
+            while (j < longueurLigne) {
+                try {
+                    bloc = bloc + ligneString(d, j);
+                    j++;
+                } catch (IndexOutOfBoundsException e) {
+                }
+            }
         return bloc;
     }
-    }
+}
 
 

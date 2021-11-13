@@ -9,7 +9,7 @@ public class NouveauFichier {
      * @param nomFichier nom du fichier qui sera defini pour le nouveau fichier.
      * @param d Arraylist contenant les Arraylist qui contient les Strings unicode Japonais a mettre dans le nouveau
      *          fichier.
-     * @return un noveau fichier HTML de type FileWriter.
+     * @return un nouveau fichier HTML de type FileWriter.
      * @throws IOException
      */
     public static FileWriter newFile(String nomFichier, ArrayList<ArrayList<String>> d) throws IOException {

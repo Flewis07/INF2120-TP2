@@ -8,23 +8,24 @@ public class LectureFichier {
 
     /**
      * Permet de lire une ligne de String et de la separer en syllables.
-     * @param contenu ligne de String a separer.
+     * @param texte ligne de String a separer.
      * @return un Arraylist contenant un Arraylist de Syllables en String.
      * @throws IOException
      */
-    public static ArrayList<ArrayList<String>> lectureFichier(String contenu) throws IOException {
-
-        ArrayList<ArrayList<String>> a = new ArrayList<>();
+    public static ArrayList<ArrayList<String>> lectureFichier(String texte) throws MessageErrException {
+        ArrayList<ArrayList<String>> listeSyllables = new ArrayList<>();
         String syllable = "";
-        int longueur = syllable.length();
         int position = 0;
 
-            for (int i = 0; i < contenu.length(); i++) {
-                switch (contenu.charAt(i)) {
+            for (int i = 0; i < texte.length(); i++) {
+                if(texte.charAt(i) < 'A' || texte.charAt(i) > 'Z' && texte.charAt(i) < 'a' || texte.charAt(i) > 'z'){
+                    throw new MessageErrException("Mauvais type de caractere.");
+                }
+                switch (texte.charAt(i)) {
                     case '\n':
                         syllable = syllable + " ";
-                        a.add(new ArrayList<>());
-                        a.get(position).add(syllable);
+                        listeSyllables.add(new ArrayList<>());
+                        listeSyllables.get(position).add(syllable);
                         position++;
                         break;
                     case 'a':
@@ -32,9 +33,9 @@ public class LectureFichier {
                     case 'i':
                     case 'o':
                     case 'u':
-                        syllable = syllable + contenu.charAt(i);
-                        a.add(new ArrayList<String>());
-                        a.get(position).add(syllable);
+                        syllable = syllable + texte.charAt(i);
+                        listeSyllables.add(new ArrayList<String>());
+                        listeSyllables.get(position).add(syllable);
                         syllable = "";
                         position++;
                         break;
@@ -43,34 +44,33 @@ public class LectureFichier {
                     case 'I':
                     case 'O':
                     case 'U':
-                        syllable = syllable + Character.toLowerCase(contenu.charAt(i));
-                        a.add(new ArrayList<String>());
-                        a.get(position).add(syllable);
+                        syllable = syllable + Character.toLowerCase(texte.charAt(i));
+                        listeSyllables.add(new ArrayList<>());
+                        listeSyllables.get(position).add(syllable);
                         syllable = "";
                         position++;
                         break;
                     default:
                         if(syllable.isEmpty()){
-                            syllable = syllable + contenu.charAt(i);
+                            syllable = syllable + texte.charAt(i);
                         } else {
-                            syllable = syllable + Character.toLowerCase(contenu.charAt(i));
+                            syllable = syllable + Character.toLowerCase(texte.charAt(i));
                         }
                         break;
                 }
-
             }
-        return a;
+        return listeSyllables;
     }
 
     /**
-     * Permet de convertir un fichier text en String.
-     * @param nom nom du fichier dont le contenu sera converti en String.
+     * Permet de convertir un fichier texte en String.
+     * @param nomFichier nom du fichier dont le contenu sera converti en String.
      * @return le contenu du fichier sous forme de String.
      * @throws IOException
      */
-    public static String convertirString (String nom) throws IOException {
+    public static String convertirString (String nomFichier) throws IOException {
 
-        Path filePath = Paths.get(nom);
+        Path filePath = Paths.get(nomFichier);
         String contenu = Files.readString(filePath);
 
         return contenu;
@@ -78,15 +78,15 @@ public class LectureFichier {
 
     /**
      * Retire les espace du tableau String.
-     * @param tableau tableau de String dans lequel il faut retirer les espace blancs.
+     * @param lignes tableau de String dans lequel il faut retirer les espace blancs.
      * @return un tableau de String sans espaces blancs.
      */
-    public static String [] trimerString (String [] tableau){
+    public static String [] trimerString (String [] lignes){
 
-        String [] tableau2 = new String[tableau.length];
+        String [] tableau2 = new String[lignes.length];
 
-        for (int i = 0; i < tableau.length; i++){
-            tableau2[i] = tableau[i].replaceAll("\\s", "");
+        for (int i = 0; i < lignes.length; i++){
+            tableau2[i] = lignes[i].replaceAll("\\s", "");
         }
         return tableau2;
     }

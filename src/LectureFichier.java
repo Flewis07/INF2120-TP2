@@ -16,6 +16,7 @@ public class LectureFichier {
 
         ArrayList<ArrayList<String>> a = new ArrayList<>();
         String syllable = "";
+        int longueur = syllable.length();
         int position = 0;
 
             for (int i = 0; i < contenu.length(); i++) {
@@ -37,8 +38,23 @@ public class LectureFichier {
                         syllable = "";
                         position++;
                         break;
+                    case 'A':
+                    case 'E':
+                    case 'I':
+                    case 'O':
+                    case 'U':
+                        syllable = syllable + Character.toLowerCase(contenu.charAt(i));
+                        a.add(new ArrayList<String>());
+                        a.get(position).add(syllable);
+                        syllable = "";
+                        position++;
+                        break;
                     default:
-                        syllable = syllable + contenu.charAt(i);
+                        if(syllable.isEmpty()){
+                            syllable = syllable + contenu.charAt(i);
+                        } else {
+                            syllable = syllable + Character.toLowerCase(contenu.charAt(i));
+                        }
                         break;
                 }
 

@@ -14,77 +14,62 @@ public class Convertir {
     public static ArrayList<ArrayList<String>> convertion(String [] lignes, ArrayList<Lettre> katagana,
                                                           ArrayList<Lettre> hiragana) throws IOException {
         ArrayList<ArrayList<String>> c;
-        ArrayList<ArrayList<String>> d = new ArrayList<>();
+        ArrayList<ArrayList<String>> e = new ArrayList<>();
+        String d = "";
+        String syllable;
 
         int k = 0;
 
         for (int i = 0; i < lignes.length; i++) {
             c = LectureFichier.lectureFichier(lignes[i]);
-            for (int j = 0; j < c.get(k).size(); j++) {
-                if (c.get(k).get(j).charAt(0) >= 'A' && c.get(k).get(j).charAt(0) <= 'Z') {
-                    d.add(convertirUnicode(katagana, c));
-                } else if (c.get(k).get(j).charAt(0) >= 'a' && c.get(k).get(j).charAt(0) <= 'z') {
-                    d.add(convertirUnicode(hiragana, c));
+            e.add(new ArrayList<>());
+            for (int j = 0; j < c.size(); j++) {
+                syllable = c.get(j).get(k);
+                if (syllable.charAt(0) >= 'A' && syllable.charAt(0) <= 'Z') {
+                    d = convertirUnicode(katagana, syllable);
+                    e.get(i).add(d);
+                } else if (syllable.charAt(0) >= 'a' && syllable.charAt(0) <= 'z') {
+                    d = convertirUnicode(hiragana, syllable);
+                    e.get(i).add(d);
                 }
             }
         }
-        return d;
+        return e;
     }
 
     /**
      * Permet de retourner les syllables d'une ligne en unicode japonais.
      * @param typeCaracteres le type de caractere dont seront converti les syllables.
-     * @param ligneSyllables la ligne contenant les syllables a convertir.
+     * @param syllable la ligne contenant les syllables a convertir.
      * @return un Arraylist de type String contenant les syllables convertis avec leurs unicodes Japonais.
      */
-    private static ArrayList<String> convertirUnicode(ArrayList<Lettre> typeCaracteres,
-                                                      ArrayList<ArrayList<String>> ligneSyllables) {
-        ArrayList<String> d = new ArrayList<>();
-        ArrayList<ArrayList<String>> syllable1 = new ArrayList<>();
-        ArrayList<String> syllable2 = new ArrayList<>();
-        String nouvelSyllable = "";
+    private static String convertirUnicode(ArrayList<Lettre> typeCaracteres,
+                                                      String syllable) {
+        String d = "";
         Lettre valeur;
-        char y = 'y';
         int j = 0;
         int k = 0;
         int i = 0;
 
 
-            while (j < typeCaracteres.size() && i < ligneSyllables.size()) {
+            while (j < typeCaracteres.size()) {
                 valeur = typeCaracteres.get(j);
-                if (ligneSyllables.get(i).get(k).charAt(0) == valeur.a.charAt(0) && valeur.a.length() == 1) {
-                    d.add(valeur.unicode);
-                    j = 0;
-                    i++;
-                } else if (ligneSyllables.get(i).get(k).charAt(0) == valeur.a.charAt(0)
-                        && ligneSyllables.get(i).get(k).charAt(1) == valeur.a.charAt(1) && valeur.a.length() == 2) {
-                    d.add(valeur.unicode);
-                    j = 0;
-                    i++;
-                } else if (ligneSyllables.get(i).get(k).charAt(0) == valeur.a.charAt(0)
-                        && ligneSyllables.get(i).get(k).charAt(1) == valeur.a.charAt(1)
-                        && ligneSyllables.get(i).get(k).charAt(2) == valeur.a.charAt(2) && valeur.a.length() == 3) {
-                    d.add(valeur.unicode);
-                    j = 0;
-                    i++;
-                /**} else if (ligneSyllables.get(i).get(k).charAt(1) == y && ligneSyllables.get(i).size() == 3) {
-                    nouvelSyllable = ligneSyllables.get(i).get(k).charAt(0) + "i";
-                    syllable1.add(new ArrayList<String>());
-                    syllable1.get(0).add(nouvelSyllable);
-                    syllable2 = convertirUnicode(typeCaracteres, syllable1);
-                    d.add(syllable2.get(0));
-                    nouvelSyllable = "";
-                    nouvelSyllable = nouvelSyllable + ligneSyllables.get(i).get(k).charAt(1) + ligneSyllables.get(i).get(k).charAt(2);
-                    syllable1.get(0).add(nouvelSyllable);
-                    syllable2 = convertirUnicode(typeCaracteres, syllable1);
-                    d.add(syllable2.get(0));
-                    j = 0;
-                    i++;*/
+                if (syllable.charAt(0) == valeur.a.charAt(0) && valeur.a.length() == 1) {
+                    d = valeur.unicode;
+                    j = typeCaracteres.size();
+                } else if (syllable.charAt(0) == valeur.a.charAt(0)
+                        && syllable.charAt(1) == valeur.a.charAt(1) && valeur.a.length() == 2) {
+                    d = valeur.unicode;
+                    j = typeCaracteres.size();
+                } else if (syllable.charAt(0) == valeur.a.charAt(0)
+                        && syllable.charAt(1) == valeur.a.charAt(1)
+                        && syllable.charAt(2) == valeur.a.charAt(2) && valeur.a.length() == 3) {
+                    d = valeur.unicode;
+                    j = typeCaracteres.size();
                 } else {
                     j++;
                 }
             }
-
         return d;
     }
 }

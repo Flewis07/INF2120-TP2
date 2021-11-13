@@ -101,9 +101,33 @@ public class Hiragana {
         hiragana.add(new Lettre("kyu", "&#12365;&#12421;"));
         hiragana.add(new Lettre("kyo", "&#12365;&#12423;"));
 
-        hiragana.add(new Lettre("nya", "&#12365;&#12419;"));
-        hiragana.add(new Lettre("nyu", "&#12365;&#12421;"));
-        hiragana.add(new Lettre("nyo", "&#12365;&#12423;"));
+        hiragana.add(new Lettre("nya", "&#12395;&#12419;"));
+        hiragana.add(new Lettre("nyu", "&#12395;&#12421;"));
+        hiragana.add(new Lettre("nyo", "&#12395;&#12423;"));
+
+        hiragana.add(new Lettre("hya", "&#12402;&#12419;"));
+        hiragana.add(new Lettre("hyu", "&#12402;&#12421;"));
+        hiragana.add(new Lettre("hyo", "&#12402;&#12423;"));
+
+        hiragana.add(new Lettre("mya", "&#12415;&#12419;"));
+        hiragana.add(new Lettre("myu", "&#12415;&#12421;"));
+        hiragana.add(new Lettre("myo", "&#12415;&#12423;"));
+
+        hiragana.add(new Lettre("rya", "&#12426;&#12419;"));
+        hiragana.add(new Lettre("ryu", "&#12426;&#12421;"));
+        hiragana.add(new Lettre("ryo", "&#12426;&#12423;"));
+
+        hiragana.add(new Lettre("gya", "&#12366;&#12419;"));
+        hiragana.add(new Lettre("gyu", "&#12366;&#12421;"));
+        hiragana.add(new Lettre("gyo", "&#12366;&#12423;"));
+
+        hiragana.add(new Lettre("bya", "&#12403;&#12419;"));
+        hiragana.add(new Lettre("byu", "&#12403;&#12421;"));
+        hiragana.add(new Lettre("byo", "&#12403;&#12423;"));
+
+        hiragana.add(new Lettre("pya", "&#12404;&#12419;"));
+        hiragana.add(new Lettre("pyu", "&#12404;&#12421;"));
+        hiragana.add(new Lettre("pyo", "&#12404;&#12423;"));
 
         hiragana.add(new Lettre("n'", "&#12435;"));
 

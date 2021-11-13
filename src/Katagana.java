@@ -97,6 +97,38 @@ public class Katagana {
         katagana.add(new Lettre("Pe", "&#12506;"));
         katagana.add(new Lettre("Po", "&#12509;"));
 
+        katagana.add(new Lettre("Kya", "&#12461;&#12515;"));
+        katagana.add(new Lettre("Kyu", "&#12461;&#12517;"));
+        katagana.add(new Lettre("Kyo", "&#12461;&#12519;"));
+
+        katagana.add(new Lettre("Nya", "&#12491;&#12515;"));
+        katagana.add(new Lettre("Nyu", "&#12491;&#12517;"));
+        katagana.add(new Lettre("Nyo", "&#12491;&#12519;"));
+
+        katagana.add(new Lettre("Hya", "&#12498;&#12515;"));
+        katagana.add(new Lettre("Hyu", "&#12498;&#12517;"));
+        katagana.add(new Lettre("Hyo", "&#12498;&#12519;"));
+
+        katagana.add(new Lettre("Mya", "&#12511;&#12515;"));
+        katagana.add(new Lettre("Myu", "&#12511;&#12517;"));
+        katagana.add(new Lettre("Myo", "&#12511;&#12519;"));
+
+        katagana.add(new Lettre("Rya", "&#12522;&#12515;"));
+        katagana.add(new Lettre("Ryu", "&#12522;&#12517;"));
+        katagana.add(new Lettre("Ryo", "&#12522;&#12519;"));
+
+        katagana.add(new Lettre("Gya", "&#12462;&#12515;"));
+        katagana.add(new Lettre("Gyu", "&#12462;&#12517;"));
+        katagana.add(new Lettre("Gyo", "&#12462;&#12519;"));
+
+        katagana.add(new Lettre("Bya", "&#12499;&#12515;"));
+        katagana.add(new Lettre("Byu", "&#12499;&#12517;"));
+        katagana.add(new Lettre("Byo", "&#12499;&#12519;"));
+
+        katagana.add(new Lettre("Pya", "&#12500;&#12515;"));
+        katagana.add(new Lettre("Pyu", "&#12500;&#12517;"));
+        katagana.add(new Lettre("Pyo", "&#12500;&#12519;"));
+
         katagana.add(new Lettre("N'", "&#12531;"));
 
         return katagana;

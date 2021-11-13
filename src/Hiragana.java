@@ -97,6 +97,14 @@ public class Hiragana {
         hiragana.add(new Lettre("pe", "&#12410;"));
         hiragana.add(new Lettre("po", "&#12413;"));
 
+        hiragana.add(new Lettre("kya", "&#12365;&#12419;"));
+        hiragana.add(new Lettre("kyu", "&#12365;&#12421;"));
+        hiragana.add(new Lettre("kyo", "&#12365;&#12423;"));
+
+        hiragana.add(new Lettre("nya", "&#12365;&#12419;"));
+        hiragana.add(new Lettre("nyu", "&#12365;&#12421;"));
+        hiragana.add(new Lettre("nyo", "&#12365;&#12423;"));
+
         hiragana.add(new Lettre("n'", "&#12435;"));
 
         return hiragana;

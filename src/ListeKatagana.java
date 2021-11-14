@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Katagana {
+public class ListeKatagana {
 
     /**
      * Cree un Arraylist contenant les syllables ainsi que leurs convertions en Katagana.

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Hiragana {
+public class ListeHiragana {
 
     /**
      * Cree un Arraylist contenant les syllables ainsi que leurs convertions en Hiragana.

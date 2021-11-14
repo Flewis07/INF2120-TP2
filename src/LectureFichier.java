@@ -19,7 +19,9 @@ public class LectureFichier {
 
             for (int i = 0; i < texte.length(); i++) {
                 if(texte.charAt(i) < 'A' || texte.charAt(i) > 'Z' && texte.charAt(i) < 'a' || texte.charAt(i) > 'z'){
-                    throw new MessageErrException("Mauvais type de caractere.");
+                    if(texte.charAt(i) != 0x0027) {
+                        throw new MessageErrException("Mauvais type de caractere.");
+                    }
                 }
                 switch (texte.charAt(i)) {
                     case '\n':
@@ -33,6 +35,7 @@ public class LectureFichier {
                     case 'i':
                     case 'o':
                     case 'u':
+                    case 0x0027:
                         syllable = syllable + texte.charAt(i);
                         listeSyllables.add(new ArrayList<String>());
                         listeSyllables.get(position).add(syllable);

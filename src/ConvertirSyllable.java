@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Convertir {
+public class ConvertirSyllable {
 
     /**
      * Converti un tableau de String en unicode japonais.

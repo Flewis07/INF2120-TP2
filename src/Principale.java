@@ -1,40 +1,30 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class Principale {
 
-    public static ArrayList c = new ArrayList();
-    public static ArrayList<ArrayList<String>> d = new ArrayList();
+    public static ArrayList<ArrayList<String>> listeSyllables = new ArrayList();
 
     /**
      * Methode main du programme.
      * @param args
-     * @throws MessageErrException
+     * @throws MessageErrException un message d'erreur apparait si l'entree n'est pas valide.
      * @throws IOException
      */
     public static void main (String [] args) throws MessageErrException, IOException {
 
-        //Lire un fichier a partir de la methode main. Le fichier doit etre en .txt sinon un message d'erreur survient.
         String nomFichier = LectureClavier.lectureClavier();
 
-        //Methode qui permet de convertir le contenu du fichier en un string.
-        String contenu = LectureFichier.convertirString(nomFichier);
+        String contenuFichier = LectureFichier.convertirString(nomFichier);
 
-        //Methode qui permet de diviser le contenu du fichier en differentes lignes
-        String [] lignes = contenu.split("\n");
+        String [] tableauLignes = contenuFichier.split("\n");
+        tableauLignes = LectureFichier.trimerString(tableauLignes);
 
-        //Methode qui permet de retirer les espaces du fichier.
-        lignes = LectureFichier.trimerString(lignes);
+        ArrayList<Lettre> hiragana = ListeHiragana.hiragana();
+        ArrayList<Lettre> katagana = ListeKatagana.katagana();
 
-        ArrayList<Lettre> hiragana = Hiragana.hiragana();
-        ArrayList<Lettre> katagana = Katagana.katagana();
+        listeSyllables = ConvertirSyllable.convertion(tableauLignes, katagana, hiragana);
 
-        d = Convertir.convertion(lignes, katagana, hiragana);
-
-
-        FileWriter a1 = NouveauFichier.newFile(nomFichier, d);
+        NouveauFichier.newFile(nomFichier, listeSyllables);
     }
 }

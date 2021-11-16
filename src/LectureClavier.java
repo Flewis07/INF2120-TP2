@@ -14,7 +14,7 @@ public class LectureClavier {
             String nom = clavier.nextLine();
             clavier.close();
 
-            if(!nom.contains(seq)){
+            if(!nom.endsWith(seq)){
                 throw new MessageErrException(MESSAGE_ERR_1);
             }
             return nom;

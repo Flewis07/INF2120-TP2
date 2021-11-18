@@ -1,3 +1,6 @@
+/**
+ * Cette classe permet de construire une erreur selon le type de situation.
+ */
 public class MessageErrException extends Exception{
 
     /**

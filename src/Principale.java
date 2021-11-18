@@ -1,9 +1,12 @@
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Classe principale du code contenant la methode main.
+ */
 public class Principale {
 
-    public static ArrayList<ArrayList<String>> listeSyllables = new ArrayList();
+    public static ArrayList<ArrayList<String>> listeSyllables;
 
     /**
      * Methode main du programme.

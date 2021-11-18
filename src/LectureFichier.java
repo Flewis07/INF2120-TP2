@@ -4,13 +4,18 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+/**
+ * Cette classe permet de lire le contenu d'un fichier converti en String.
+ */
 public class LectureFichier {
+
+    private static final String MSG_ERR_1 = "Mauvais type de caractere.";
 
     /**
      * Permet de lire une ligne de String et de la separer en syllables.
      * @param texte ligne de String a separer.
      * @return un Arraylist contenant un Arraylist de Syllables en String.
-     * @throws IOException
+     * @throws MessageErrException s'il y a un caractere autre qu'une lettre.
      */
     public static ArrayList<ArrayList<String>> lectureFichier(String texte) throws MessageErrException {
         ArrayList<ArrayList<String>> listeSyllables = new ArrayList<>();
@@ -18,11 +23,13 @@ public class LectureFichier {
         int position = 0;
 
             for (int i = 0; i < texte.length(); i++) {
+
                 if(texte.charAt(i) < 'A' || texte.charAt(i) > 'Z' && texte.charAt(i) < 'a' || texte.charAt(i) > 'z'){
                     if(texte.charAt(i) != 0x0027) {
-                        throw new MessageErrException("Mauvais type de caractere.");
+                        throw new MessageErrException(MSG_ERR_1);
                     }
                 }
+
                 switch (texte.charAt(i)) {
                     case '\n':
                         syllable = syllable + " ";
@@ -37,7 +44,7 @@ public class LectureFichier {
                     case 'u':
                     case 0x0027:
                         syllable = syllable + texte.charAt(i);
-                        listeSyllables.add(new ArrayList<String>());
+                        listeSyllables.add(new ArrayList<>());
                         listeSyllables.get(position).add(syllable);
                         syllable = "";
                         position++;

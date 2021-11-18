@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * Cette classe permet de construire une liste d'unicode de type Katagana.
+ */
 public class ListeKatagana {
 
     /**

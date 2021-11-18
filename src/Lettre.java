@@ -1,3 +1,6 @@
+/**
+ * Cette classe permet de construire un objet de type Lettre.
+ */
 public class Lettre {
 
     String syllable;

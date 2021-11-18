@@ -9,6 +9,7 @@ public class LectureClavier {
 
         /**
          * Permet de lire une commande au clavier entrée par l'utilisateur.
+         *
          * @return le nom du fichier sous forme de String.
          * @throws MessageErrException si le nom du fichier ne termine pas par '.txt'.
          */

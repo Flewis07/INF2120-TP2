@@ -8,6 +8,7 @@ public class Lettre {
 
     /**
      * Constructeur de la classe lettre.
+     *
      * @param syllable Syllable
      * @param unicode Unicode Japonais correspondant a la Syllable.
      */
@@ -18,6 +19,7 @@ public class Lettre {
 
     /**
      * Permet d'aller chercher le a d'un objet de type Lettre.
+     *
      * @return le a de l'objet de type Lettre.
      */
     public String getSyllable() {
@@ -26,6 +28,7 @@ public class Lettre {
 
     /**
      * Permet de definir le a de l'objet de type Lettre.
+     *
      * @return Defini le nouveau a de l'objet de type Lettre.
      */
     public void setSyllable(String syllable) {
@@ -34,6 +37,7 @@ public class Lettre {
 
     /**
      * Permet d'aller chercher l'unicode d'un objet de type Lettre.
+     *
      * @return l'unicode de l'objet de type Lettre.
      */
     public String getUnicode() {
@@ -42,6 +46,7 @@ public class Lettre {
 
     /**
      * Permet de definir l'unicode de l'objet de type Lettre.
+     *
      * @return Defini le nouvel unicode de l'objet de type Lettre.
      */
     public void setUnicode(String unicode) {

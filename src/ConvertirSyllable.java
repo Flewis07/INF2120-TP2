@@ -10,6 +10,7 @@ public class ConvertirSyllable {
 
     /**
      * Converti un tableau de String en unicode japonais.
+     *
      * @param lignes tableau contenant les lignes du fichier en entree avec leurs syllables.
      * @param katagana Arraylist contenant les unicodes de type katagana pour la convertion.
      * @param hiragana Arraylist contenant les unicodes de type hiragana pour la convertion.
@@ -47,6 +48,7 @@ public class ConvertirSyllable {
 
     /**
      * Permet de convertir une syllable en Japonais selon son unicode.
+     *
      * @param typeSyllable le type de de caractere Japonais en lequel la syllable sera converti.
      * @param syllable la syllable a convertir en Japonais.
      * @return un String de l'unicode Japonais correspondant a la syllable.

@@ -6,16 +6,20 @@ import java.util.ArrayList;
  */
 public class Principale {
 
+    private static final String MSG_DEBUT = "Veuillez entrer le nom d'un fichier: ";
+
     public static ArrayList<ArrayList<String>> listeSyllables;
 
     /**
      * Methode main du programme.
+     *
      * @param args
      * @throws MessageErrException un message d'erreur apparait si l'entree n'est pas valide.
      * @throws IOException
      */
     public static void main (String [] args) throws MessageErrException, IOException {
 
+        System.out.print(MSG_DEBUT);
         String nomFichier = LectureClavier.lectureClavier();
 
         String contenuFichier = LectureFichier.convertirString(nomFichier);

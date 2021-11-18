@@ -57,6 +57,7 @@ public class NouveauFichier {
 
     /**
      * Permet de mettre les Strings d'unicode d'une ligne dans un bloc de ligne qui sera dans le fichier HTML.
+     *
      * @param listeSyllables la liste des syllables en unicode Japonais qui sera mise dans le fichier HTML.
      * @return un String de la ligne qui sera mise dans le fichier HTML.
      */

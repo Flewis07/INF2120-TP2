@@ -7,6 +7,7 @@ public class ListeKatagana {
 
     /**
      * Cree un Arraylist contenant les syllables ainsi que leurs convertions en Katagana.
+     *
      * @return un Arraylist contenant les syllables et leurs unicodes de coversion Katagana.
      */
     public static ArrayList<Lettre> katagana() {

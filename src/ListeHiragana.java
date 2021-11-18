@@ -7,6 +7,7 @@ public class ListeHiragana {
 
     /**
      * Cree un Arraylist contenant les syllables ainsi que leurs convertions en Hiragana.
+     *
      * @return un Arraylist contenant les syllables et leurs unicodes de coversion Hiragana.
      */
     public static ArrayList<Lettre> hiragana(){

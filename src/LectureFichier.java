@@ -66,8 +66,6 @@ public class LectureFichier {
                         throw new MessageErrException(MSG_ERR_2);
                     }else if(syllable.isEmpty()) {
                         syllable = syllable + texte.charAt(i);
-                    }else if (i == texte.length() - 1){
-                        throw new MessageErrException(MSG_ERR_2);
                     } else {
                         syllable = syllable + Character.toLowerCase(texte.charAt(i));
                     }

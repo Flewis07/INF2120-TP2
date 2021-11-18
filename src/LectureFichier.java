@@ -47,11 +47,19 @@ public class LectureFichier {
                     case 'I':
                     case 'O':
                     case 'U':
-                        syllable = syllable + Character.toLowerCase(texte.charAt(i));
-                        listeSyllables.add(new ArrayList<>());
-                        listeSyllables.get(position).add(syllable);
-                        syllable = "";
-                        position++;
+                        if(syllable.isEmpty()){
+                            syllable = syllable + texte.charAt(i);
+                            listeSyllables.add(new ArrayList<>());
+                            listeSyllables.get(position).add(syllable);
+                            syllable = "";
+                            position++;
+                        } else {
+                            syllable = syllable + Character.toLowerCase(texte.charAt(i));
+                            listeSyllables.add(new ArrayList<>());
+                            listeSyllables.get(position).add(syllable);
+                            syllable = "";
+                            position++;
+                        }
                         break;
                     default:
                         if(syllable.isEmpty()){

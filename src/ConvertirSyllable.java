@@ -21,6 +21,9 @@ public class ConvertirSyllable {
 
         for (int i = 0; i < lignes.length; i++) {
             c = LectureFichier.lectureFichier(lignes[i]);
+            if(lignes[i].isEmpty()){
+                throw new MessageErrException("Erreur ligne vide.");
+            } else {
             d.add(new ArrayList<>());
             for (int j = 0; j < c.size(); j++) {
                 syllable = c.get(j).get(k);
@@ -32,6 +35,7 @@ public class ConvertirSyllable {
                     d.get(i).add(e);
                 }
             }
+            }
         }
         return d;
     }
@@ -42,7 +46,7 @@ public class ConvertirSyllable {
      * @param syllable la syllable a convertir en Japonais.
      * @return un String de l'unicode Japonais correspondant a la syllable.
      */
-    private static String convertirSyllable(ArrayList<Lettre> typeSyllable, String syllable) {
+    private static String convertirSyllable(ArrayList<Lettre> typeSyllable, String syllable) throws MessageErrException {
         Lettre valeurUnicode;
         String syllableConverti = "";
 
@@ -61,6 +65,9 @@ public class ConvertirSyllable {
                     syllableConverti = valeurUnicode.unicode;
                     j = typeSyllable.size();
                 }
+            }
+            if(syllableConverti.isEmpty()){
+                throw new MessageErrException("Type de syllable inconnu.");
             }
         return syllableConverti;
     }
